@@ -141,48 +141,26 @@
 //*************/
 
 
-// function monthlySavings(array,number){
-//     let sum = 0;
-//     let fix = 3000;
-//     for(const perPay of array){
-        // if(perPay >= fix){
-        //     let overDiscount = perPay - fix;
-        //     let discount = overDiscount * (20/100)
-        //     let result = overDiscount - discount;
-        //     return (sum + result + fix) - number;
-           
-        // }
-//         sum += perPay;
-//     }
-//     return sum - number;
-// }
-// let payment_living1 = monthlySavings([2000,2500,1000],5000);
-// let payment_living2 = monthlySavings([2000,2500,3500],5000);
-// let payment_living3 = monthlySavings([2000,3200,3500],5000);
-// console.log(payment_living1);
-// console.log(payment_living2);
-// console.log(payment_living3);
-
-// practice 
-
-const array1 = [2000,2500,1000];
-let sum = 0;
-for(let arr of array1){
-    sum += arr;
-}
-console.log(sum - 5000);
-
-const array2 = [2000,2500,3500];
-let sum2 = 0;
-let fix = 3000;
-let newArray = [];
-for(let arr2 of array2){
-    if(arr2 >= fix){
-        let overDiscount = arr2 - fix;
-        let discount = overDiscount * (20/100)
-        let result = (overDiscount - discount) + fix;
-        console.log(result);
+function monthlySavings(array,number){
+    let sum = 0;
+    for(const perPay of array){
+        if(perPay >= 3000){
+            let discount = perPay * 0.2
+            sum += perPay - discount;
+        }else{
+            sum += perPay;
+        }
     }
-    newArray.push(result);
+    let savings = sum - number;
+    if(savings >= 0){
+        return savings;
+    }else{
+        return "Earn More"
+    }
 }
-console.log(newArray)
+let payment_living1 = monthlySavings([2000,2500,1000],5000);
+let payment_living2 = monthlySavings([2000,2500,3500],5000);
+let payment_living3 = monthlySavings([2000,3200,3500],10000);
+console.log(payment_living1);
+console.log(payment_living2);
+console.log(payment_living3);
