@@ -309,53 +309,53 @@
 // Advance problem:-
 //****************************************************************
 
-const products = [
-  { name: "Laptop", category: "Electronics", price: 60000, stock: 10 },
-  { name: "Smartphone", category: "Electronics", price: 30000, stock: 25 },
-  { name: "Shirt", category: "Clothing", price: 2000, stock: 50 },
-  { name: "Jeans", category: "Clothing", price: 3000, stock: 30 },
-  { name: "Fridge", category: "Appliances", price: 45000, stock: 5 },
-  { name: "Microwave", category: "Appliances", price: 15000, stock: 8 },
-  { name: "Blender", category: "Appliances", price: 5000, stock: 15 }
-];
+// const products = [
+//   { name: "Laptop", category: "Electronics", price: 60000, stock: 10 },
+//   { name: "Smartphone", category: "Electronics", price: 30000, stock: 25 },
+//   { name: "Shirt", category: "Clothing", price: 2000, stock: 50 },
+//   { name: "Jeans", category: "Clothing", price: 3000, stock: 30 },
+//   { name: "Fridge", category: "Appliances", price: 45000, stock: 5 },
+//   { name: "Microwave", category: "Appliances", price: 15000, stock: 8 },
+//   { name: "Blender", category: "Appliances", price: 5000, stock: 15 }
+// ];
 
-function productList(productItem){
-  const categoryObject = {}
-  let sum = 0;
-  const electronicsyArray = [];
-  const clothingArray = [];
-  const appliancesArray = [];
-  categoryObject["'Electronics'"] = electronicsyArray;
-  categoryObject["'Clothing'"] = clothingArray;
-  categoryObject["'Appliances'"] = appliancesArray;
-  // // Electronics
-    for(const items of productItem){
-      if(items.category === "Electronics"){
-            electronicsyArray.push(items)
-      }
-      if(items.category === "Clothing"){
-        clothingArray.push(items);
-      }
-      if(items.category === "Appliances"){
-        appliancesArray.push(items);
-      }
-    }
-      for(let jog of electronicsyArray){
-       let plusItem = jog.price * jog.stock;
-       sum += plusItem;
-      }
-      electronicsyArray.push(sum);
-      for(let cloth of clothingArray){
-        let clothItem = cloth.price * cloth.stock;
-        sum += clothItem;
-      }
-      clothingArray.push(sum);
-      for(let appear of appliancesArray){
-        let appearItem = appear.price * appear.stock;
-        sum += appearItem;
-      }
-      appliancesArray.push(sum);
-return categoryObject;
-}
-let stock = (productList(products));
-console.log(stock)
+// function productList(productItem){
+//   const categoryObject = {}
+//   const electronicsyArray = [];
+//   const clothingArray = [];
+//   const appliancesArray = [];
+//   let sum = 0;
+//   categoryObject["'Electronics'"] = electronicsyArray;
+//   categoryObject["'Clothing'"] = clothingArray;
+//   categoryObject["'Appliances'"] = appliancesArray;
+
+//     for(const items of productItem){
+//       if(items.category === "Electronics"){
+//             electronicsyArray.push(items)
+//       }
+//       if(items.category === "Clothing"){
+//         clothingArray.push(items);
+//       }
+//       if(items.category === "Appliances"){
+//         appliancesArray.push(items);
+//       }
+//     }
+//     for(let jog of electronicsyArray){
+//       let plusItem = jog.price * jog.stock;
+//        sum += plusItem;
+//     }
+//     electronicsyArray.push(sum);
+//     for(let cloth of clothingArray){
+//       let clothItem = cloth.price * cloth.stock;
+//        sum += clothItem;
+//     }
+//     clothingArray.push(sum);
+//     for(let appear of appliancesArray){
+//       let appearItem = appear.price * appear.stock;
+//       sum += appearItem;
+//     }
+//       appliancesArray.push(sum);
+// return categoryObject;
+// }
+// let stock = (productList(products));
+// console.log(stock)
