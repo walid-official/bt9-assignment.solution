@@ -326,28 +326,35 @@ function productList(productItem){
   const clothingArray = [];
   const appliancesArray = [];
   categoryObject["'Electronics'"] = electronicsyArray;
-  categoryObject["'totalElectronics'"] = sum;
   categoryObject["'Clothing'"] = clothingArray;
   categoryObject["'Appliances'"] = appliancesArray;
-  // Electronics
-  for(const items of productItem){
-    
-   if(items.category === "Electronics"){
-        electronicsyArray.push(items)
+  // // Electronics
+    for(const items of productItem){
+      if(items.category === "Electronics"){
+            electronicsyArray.push(items)
       }
       if(items.category === "Clothing"){
-        clothingArray.push(items)
-        // sum += items.price * items.stock;
+        clothingArray.push(items);
       }
       if(items.category === "Appliances"){
-        appliancesArray.push(items)
-        // sum += items.price * items.stock;
+        appliancesArray.push(items);
       }
-      for(let jog of productItem){
-       sum += jog.price * jog.stock;
+    }
+      for(let jog of electronicsyArray){
+       let plusItem = jog.price * jog.stock;
+       sum += plusItem;
       }
-  }
-
+      electronicsyArray.push(sum);
+      for(let cloth of clothingArray){
+        let clothItem = cloth.price * cloth.stock;
+        sum += clothItem;
+      }
+      clothingArray.push(sum);
+      for(let appear of appliancesArray){
+        let appearItem = appear.price * appear.stock;
+        sum += appearItem;
+      }
+      appliancesArray.push(sum);
 return categoryObject;
 }
 let stock = (productList(products));
